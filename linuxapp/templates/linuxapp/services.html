@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    	<head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <title>NAY</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+          <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+          <meta name="author" content="FREEHTML5.CO" />
+       
+          <meta property="og:title" content=""/>
+          <meta property="og:image" content=""/>
+          <meta property="og:url" content=""/>
+          <meta property="og:site_name" content=""/>
+          <meta property="og:description" content=""/>
+          <meta name="twitter:title" content="" />
+          <meta name="twitter:image" content="" />
+          <meta name="twitter:url" content="" />
+          <meta name="twitter:card" content="" />
+        
+          <link rel="shortcut icon" href="static/favicon.ico">
+        
+          <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+          <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+          
+          <link rel="stylesheet" href="static/css/animate.css">
+          <link rel="stylesheet" href="static/css/icomoon.css">
+          <link rel="stylesheet" href="static/css/bootstrap.css">
+          <link rel="stylesheet" href="static/css/superfish.css">
+          <link rel="stylesheet" href="static/css/flexslider.css">      
+          <link rel="stylesheet" href="static/css/style.css">
+          <script src="static/js/modernizr-2.6.2.min.js"></script>
+          </head>
+          <body>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="django form with utf-8">
+    <meta name="author" content="wichit2s">
+    <title>Linux Services</title>
+
+    {% load static %}
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <style>
+      .filled {
+        width: 80%;
+        padding: 5px;
+      }
+      .spacing {
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+
+		<header id="fh5co-header" role="banner">
+        <div class="container text-center">
+          <div id="fh5co-logo">
+            <a href="index.html"><img src="static/images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
+          </div>
+          <nav>
+            <ul>
+                <li><a href="index">Travel</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <nav> <h1> Linux Services Page </h1> </nav>
+    <div>
+      <section class="filled">
+        <form action="services" method="POST" enctype="multipart/form-data;charset=UTF-8">
+          {% csrf_token %}
+          <div class="spacing"><input class="filled" type="text" name="icon" value="icon ไอคอน"/></div>
+          <div class="spacing"><input class="filled" type="text" name="title" value="title บริการ"/></div>
+          <div class="spacing"><input class="filled" type="text" name="detail" value="detail รายละเอียด"/></div>
+          <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
+        </form>
+      </section>
+      <div>
+       <table style="width:80%; border: 1px solid black; padding: 1em;">
+        <tr>
+          <th>Icon</th>
+          <th>Title</th>
+          <th>Detail</th>
+        </tr>
+        {% for s in services %}
+        <tr>
+          <td> <i class="fa {{s.icon}}"></i> {{ s.icon }}</td>
+          <td>{{ s.title }}</td>
+          <td>{{ s.detail }}</td>
+        </tr>
+        {% endfor %}
+      </table> 
+      
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>Copyright &copy; 2019 </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
