@@ -75,18 +75,18 @@
       <section class="filled">
         <form action="services" method="POST" enctype="multipart/form-data;charset=UTF-8">
           {% csrf_token %}
-          <div class="spacing"><input class="filled" type="text" name="icon" value="icon ไอคอน"/></div>
-          <div class="spacing"><input class="filled" type="text" name="title" value="title บริการ"/></div>
-          <div class="spacing"><input class="filled" type="text" name="detail" value="detail รายละเอียด"/></div>
+          <div class="spacing"><input class="filled" type="text" placeholder="ชื่อ"  name="icon" value=""/></div>
+          <div class="spacing"><input class="filled" type="text" placeholder="ประเภท"  name="title" value=""/></div>
+          <div class="spacing"><input class="filled" type="text" placeholder="รายละเอียด"name="detail" value=""/></div>
           <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
         </form>
       </section>
       <div>
        <table style="width:80%; border: 1px solid black; padding: 1em;">
         <tr>
-          <th>Icon</th>
-          <th>Title</th>
-          <th>Detail</th>
+          <th>ชื่อ</th>
+          <th>ประเภท</th>
+          <th>รายละเอียด</th>
         </tr>
         {% for s in services %}
         <tr>
@@ -99,11 +99,7 @@
       
       </div>
     </div>
-    <footer>
-      <div>
-        <div>Copyright &copy; 2019 </div>
-      </div>
-    </footer>
+
   </body>
 
 </html>
